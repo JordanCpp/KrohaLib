@@ -25,7 +25,7 @@ DEALINGS IN THE SOFTWARE.
 */
 
 #include <KrohaLib/Result.hpp>
-#include "Chars.hpp"
+#include <KrohaLib/Chars.hpp>
 
 Result::Result() :
 	_ok(true)
@@ -34,7 +34,7 @@ Result::Result() :
 
 bool Result::Ok()
 {
-	return false;
+	return _ok;
 }
 
 void Result::Message(const char* error)

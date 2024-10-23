@@ -2,9 +2,13 @@
 
 int main()
 {
-	Console console;
+	Result result;
+	Console console(&result);
 
-	console.Write("Hello Kroha!", 12);
+	if (result.Ok())
+	{
+		console.Write("Hello Kroha!", 12);
+	}
 
 	return 0;
 }

@@ -26,12 +26,24 @@ DEALINGS IN THE SOFTWARE.
 
 #include <KrohaLib/Windows/Console.hpp>
 
-Console::Console() :
+Console::Console(Result* result) :
+	_result(result),
 	_input(NULL),
 	_output(NULL)
 {
 	_input  = GetStdHandle(STD_INPUT_HANDLE);
+
+	if (_input == NULL)
+	{
+		_result->Message("STD_INPUT_HANDLE");
+	}
+
 	_output = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	if (_output == NULL)
+	{
+		_result->Message("STD_OUTPUT_HANDLE");
+	}
 }
 
 int Console::Write(const char* text, int size)
