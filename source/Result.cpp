@@ -24,13 +24,30 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 */
 
-#include <KrohaLib/Linux/Console.hpp>
+#include <KrohaLib/Result.hpp>
+#include "Chars.hpp"
 
-Console::Console()
+Result::Result() :
+	_ok(true)
 {
 }
 
-int Console::Write(const char* text, int size)
+bool Result::Ok()
 {
-	return 0;
+	return false;
+}
+
+void Result::Message(const char* error)
+{
+	_ok = false;
+
+	CharsCopy(_message, error, Max);
+}
+
+void Result::Message(const char* error, const char* detail)
+{
+	_ok = false;
+
+	CharsCopy(_message, error, Max);
+	CharsConcat(_message, detail, Max);
 }

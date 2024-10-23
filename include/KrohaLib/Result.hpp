@@ -24,13 +24,24 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 */
 
-#include <KrohaLib/Linux/Console.hpp>
+#ifndef KrohaLib_Result_hpp
+#define KrohaLib_Result_hpp
 
-Console::Console()
+class Result
 {
-}
+public:
+	enum
+	{
+		Max = 64
+	};
 
-int Console::Write(const char* text, int size)
-{
-	return 0;
-}
+	Result();
+	bool Ok();
+	void Message(const char* error);
+	void Message(const char* error, const char* detail);
+private:
+	bool _ok;
+	char _message[Max];
+};
+
+#endif

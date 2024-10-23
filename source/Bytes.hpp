@@ -24,13 +24,9 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 */
 
-#include <KrohaLib/Linux/Console.hpp>
+#ifndef KrohaLib_Bytes_hpp
+#define KrohaLib_Bytes_hpp
 
-Console::Console()
-{
-}
+void* BytesCopy(void* dst, const void* src, int n);
 
-int Console::Write(const char* text, int size)
-{
-	return 0;
-}
+#endif

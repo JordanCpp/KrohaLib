@@ -24,13 +24,11 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 */
 
-#include <KrohaLib/Linux/Console.hpp>
+#ifndef KrohaLib_Chars_hpp
+#define KrohaLib_Chars_hpp
 
-Console::Console()
-{
-}
+int CharsLength(const char* source, int limit);
+int CharsCopy(char* dst, const char* src, int siz);
+int CharsConcat(char* dst, const char* src, int dsize);
 
-int Console::Write(const char* text, int size)
-{
-	return 0;
-}
+#endif

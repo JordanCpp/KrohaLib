@@ -24,13 +24,14 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 */
 
-#include <KrohaLib/Linux/Console.hpp>
+#include "Bytes.hpp"
 
-Console::Console()
+void* BytesCopy(void* dst, const void* src, int n)
 {
-}
+	for (int i = 0; i < n; i++)
+	{
+		((unsigned char*)dst)[i] = ((unsigned char*)src)[i];
+	}
 
-int Console::Write(const char* text, int size)
-{
-	return 0;
+	return dst;
 }
