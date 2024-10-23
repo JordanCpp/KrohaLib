@@ -27,12 +27,15 @@ DEALINGS IN THE SOFTWARE.
 #ifndef KrohaLib_Linux_Console_hpp
 #define KrohaLib_Linux_Console_hpp
 
+#include <KrohaLib/Result.hpp>
+
 class Console
 {
 public:
-	Console();
+	Console(Result* result);
 	int Write(const char* text, int size);
 private:
+	Result* _result;
 };
 
 #endif

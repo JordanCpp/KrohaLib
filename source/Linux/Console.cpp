@@ -26,7 +26,8 @@ DEALINGS IN THE SOFTWARE.
 
 #include <KrohaLib/Linux/Console.hpp>
 
-Console::Console()
+Console::Console(Result* result) :
+	_result(result)
 {
 }
 
