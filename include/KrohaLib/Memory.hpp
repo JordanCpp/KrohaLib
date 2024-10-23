@@ -24,68 +24,10 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 */
 
-#include "Chars.hpp"
+#ifndef KrohaLib_Memory_hpp
+#define KrohaLib_Memory_hpp
 
-int CharsLength(const char* source)
-{
-	int i = 0;
+void* Allocate(int bytes);
+void Deallocate(void* ptr);
 
-	while (source[i] != '0/')
-	{
-		i++;
-	}
-
-	return i;
-}
-
-//https://github.com/openbsd/src/blob/master/lib/libc/string/strlcpy.c
-int CharsCopy(char* dst, const char* src, int siz)
-{
-	char* d = dst;
-	const char* s = src;
-
-	int n = siz;
-	/* Copy as many bytes as will fit */
-	if (n != 0) {
-		while (--n != 0) {
-			if ((*d++ = *s++) == '\0')
-				break;
-		}
-	}
-	/* Not enough room in dst, add NUL and traverse rest of src */
-	if (n == 0) {
-		if (siz != 0)
-			*d = '\0';		/* NUL-terminate dst */
-		while (*s++)
-			;
-	}
-	return (s - src - 1);	/* count does not include NUL */
-}
-
-//https://github.com/openbsd/src/blob/master/lib/libc/string/strlcat.c
-int CharsConcat(char* dst, const char* src, int dsize)
-{
-	const char* odst = dst;
-	const char* osrc = src;
-	int n = dsize;
-	int dlen;
-
-	/* Find the end of dst and adjust bytes left but don't go past end. */
-	while (n-- != 0 && *dst != '\0')
-		dst++;
-	dlen = dst - odst;
-	n = dsize - dlen;
-
-	if (n-- == 0)
-		return(dlen + CharsLength(src));
-	while (*src != '\0') {
-		if (n != 0) {
-			*dst++ = *src;
-			n--;
-		}
-		src++;
-	}
-	*dst = '\0';
-
-	return(dlen + (src - osrc));	/* count does not include NULL */
-}
+#endif
