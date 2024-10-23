@@ -28,5 +28,6 @@ DEALINGS IN THE SOFTWARE.
 #define KrohaLib_Bytes_hpp
 
 void* BytesCopy(void* dst, const void* src, int n);
+void* BytesClear(void* dst, int c, int n);
 
 #endif

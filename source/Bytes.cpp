@@ -35,3 +35,13 @@ void* BytesCopy(void* dst, const void* src, int n)
 
 	return dst;
 }
+
+void* BytesClear(void* dst, int c, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		((unsigned char*)dst)[i] = c;
+	}
+
+	return dst;
+}
