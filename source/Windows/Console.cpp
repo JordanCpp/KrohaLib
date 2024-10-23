@@ -46,7 +46,7 @@ Console::Console(Result* result) :
 	}
 }
 
-int Console::Write(const char* text, int size)
+usz Console::Write(const char* text, usz size)
 {
 	DWORD count = 0;
 

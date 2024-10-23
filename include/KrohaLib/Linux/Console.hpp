@@ -33,7 +33,7 @@ class Console
 {
 public:
 	Console(Result* result);
-	int Write(const char* text, int size);
+	usz Write(const char* text, usz size);
 private:
 	Result* _result;
 };

@@ -1,4 +1,3 @@
-
 /*
 Boost Software License - Version 1.0 - August 17th, 2003
 
@@ -34,5 +33,17 @@ DEALINGS IN THE SOFTWARE.
     #define true  1 
     #define false 0 
 #endif
+
+typedef unsigned char u8;
+typedef signed char   i8;
+
+typedef unsigned short u16;
+typedef signed short   i16;
+
+typedef unsigned int u32;
+typedef signed int   i32;
+
+typedef unsigned int usz;
+typedef signed int   isz;
 
 #endif

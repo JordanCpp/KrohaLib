@@ -32,9 +32,9 @@ Console::Console(Result* result) :
 {
 }
 
-int Console::Write(const char* text, int size)
+usz Console::Write(const char* text, usz size)
 {
-	int count = write(1, text, size);
+	usz count = write(1, text, size);
 
 	return count;
 }

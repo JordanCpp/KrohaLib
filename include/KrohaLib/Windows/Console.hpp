@@ -28,13 +28,14 @@ DEALINGS IN THE SOFTWARE.
 #define KrohaLib_Windows_Console_hpp
 
 #include <Windows.h>
+#include <KrohaLib/Types.hpp>
 #include <KrohaLib/Result.hpp>
 
 class Console
 {
 public:
 	Console(Result* result);
-	int Write(const char* text, int size);
+	usz Write(const char* text, usz size);
 private:
 	Result* _result;
 	HANDLE  _input;

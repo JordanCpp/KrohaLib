@@ -26,7 +26,7 @@ DEALINGS IN THE SOFTWARE.
 
 #include <KrohaLib/Memory.hpp>
 
-void* Allocate(int bytes)
+void* Allocate(usz bytes)
 {
 	return 0;
 }

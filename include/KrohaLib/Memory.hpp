@@ -27,7 +27,9 @@ DEALINGS IN THE SOFTWARE.
 #ifndef KrohaLib_Memory_hpp
 #define KrohaLib_Memory_hpp
 
-void* Allocate(int bytes);
+#include <KrohaLib/Types.hpp>
+
+void* Allocate(usz bytes);
 void Deallocate(void* ptr);
 
 #endif

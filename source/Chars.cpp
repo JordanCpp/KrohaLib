@@ -26,9 +26,9 @@ DEALINGS IN THE SOFTWARE.
 
 #include <KrohaLib/Chars.hpp>
 
-int CharsLength(const char* source)
+usz CharsLength(const char* source)
 {
-	int i = 0;
+	usz i = 0;
 
 	while (source[i] != '\0')
 	{
@@ -39,12 +39,12 @@ int CharsLength(const char* source)
 }
 
 //https://github.com/openbsd/src/blob/master/lib/libc/string/strlcpy.c
-int CharsCopy(char* dst, const char* src, int siz)
+usz CharsCopy(char* dst, const char* src, usz siz)
 {
 	char* d = dst;
 	const char* s = src;
 
-	int n = siz;
+	usz n = siz;
 	/* Copy as many bytes as will fit */
 	if (n != 0) {
 		while (--n != 0) {
@@ -59,16 +59,17 @@ int CharsCopy(char* dst, const char* src, int siz)
 		while (*s++)
 			;
 	}
+
 	return (s - src - 1);	/* count does not include NUL */
 }
 
 //https://github.com/openbsd/src/blob/master/lib/libc/string/strlcat.c
-int CharsConcat(char* dst, const char* src, int dsize)
+usz CharsConcat(char* dst, const char* src, usz dsize)
 {
 	const char* odst = dst;
 	const char* osrc = src;
-	int n = dsize;
-	int dlen;
+	usz n = dsize;
+	usz dlen;
 
 	/* Find the end of dst and adjust bytes left but don't go past end. */
 	while (n-- != 0 && *dst != '\0')
@@ -87,5 +88,5 @@ int CharsConcat(char* dst, const char* src, int dsize)
 	}
 	*dst = '\0';
 
-	return(dlen + (src - osrc));	/* count does not include NULL */
+	return (dlen + (src - osrc));	/* count does not include NULL */
 }
