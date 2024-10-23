@@ -1,4 +1,5 @@
 #include <KrohaLib/Console.hpp>
+#include <KrohaLib/Chars.hpp>
 
 int main()
 {
@@ -7,7 +8,9 @@ int main()
 
 	if (result.Ok())
 	{
-		console.Write("Hello Kroha!", 12);
+		const char str[] = "Hello Kroha!";
+
+		console.Write(str, CharsLength(str));
 	}
 
 	return 0;

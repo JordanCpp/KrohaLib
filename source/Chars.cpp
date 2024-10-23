@@ -30,7 +30,7 @@ int CharsLength(const char* source)
 {
 	int i = 0;
 
-	while (source[i] != '0/')
+	while (source[i] != '\0')
 	{
 		i++;
 	}

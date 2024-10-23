@@ -39,9 +39,7 @@ bool Result::Ok()
 
 void Result::Message(const char* error)
 {
-	_ok = false;
-
-	CharsCopy(_message, error, Max);
+	Message(error, "");
 }
 
 void Result::Message(const char* error, const char* detail)

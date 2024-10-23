@@ -27,7 +27,7 @@ DEALINGS IN THE SOFTWARE.
 #ifndef KrohaLib_Chars_hpp
 #define KrohaLib_Chars_hpp
 
-int CharsLength(const char* source, int limit);
+int CharsLength(const char* source);
 int CharsCopy(char* dst, const char* src, int siz);
 int CharsConcat(char* dst, const char* src, int dsize);
 
