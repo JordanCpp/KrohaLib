@@ -25,6 +25,7 @@ DEALINGS IN THE SOFTWARE.
 */
 
 #include <KrohaLib/Linux/Console.hpp>
+#include <unistd.h>
 
 Console::Console(Result* result) :
 	_result(result)
@@ -33,5 +34,7 @@ Console::Console(Result* result) :
 
 int Console::Write(const char* text, int size)
 {
-	return 0;
+	int count = write(1, text, size);
+
+	return count;
 }
