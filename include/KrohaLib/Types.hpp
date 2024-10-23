@@ -1,3 +1,4 @@
+
 /*
 Boost Software License - Version 1.0 - August 17th, 2003
 
@@ -24,26 +25,14 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef KrohaLib_Result_hpp
-#define KrohaLib_Result_hpp
+#ifndef KrohaLib_Types_hpp
+#define KrohaLib_Types_hpp
 
-#include <KrohaLib/Types.hpp>
-
-class Result
-{
-public:
-	enum
-	{
-		Max = 64
-	};
-
-	Result();
-	bool Ok();
-	void Message(const char* error);
-	void Message(const char* error, const char* detail);
-private:
-	bool _ok;
-	char _message[Max];
-};
+//MSVC++ 5.0 _MSC_VER == 1100 (Visual Studio 97 version 5.0)
+#if (_MSC_VER <= 1100)
+    #define bool  int 
+    #define true  1 
+    #define false 0 
+#endif
 
 #endif
